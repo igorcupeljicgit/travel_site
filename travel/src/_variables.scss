@@ -1,0 +1,35 @@
+$color1:#f05a2b;
+$color2:#f7b74f;
+$color3:#87c5ec;
+$color4:#2f797a;
+$color5:#318c8c;
+$color6:#7cc9c2;
+$color7:#2e2d2c;
+$color8:#3c3c3b;
+$color9:#575756;
+$color10:#f7f7f7;
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../Vega_asset/fonts/Montserrat-Regular.woff2") format("woff2"),
+      url("../Vega_asset/fonts/Montserrat-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Montserrat";
+    src: url("../Vega_asset/fonts/Montserrat-Bold.woff2") format("woff2"),
+      url("../Vega_asset/fonts/Montserrat-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Montserrat";
+    src: url("../Vega_asset/fonts/Montserrat-Medium.woff2") format("woff2"),
+      url("../Vega_asset/fonts/Montserrat-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  

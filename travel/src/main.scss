@@ -1,0 +1,666 @@
+@import "_variables";
+@import "_mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container-header {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 80%;
+  align-items: center;
+
+  div {
+    flex-direction: row;
+    display: table;
+    background: $color1;
+    width: 24px;
+    height: 24px;
+    margin: 0 2%;
+    border-radius: 50%;
+  }
+  h3 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    flex-direction: row;
+  }
+  span {
+    color: $color1;
+  }
+}
+.navigation {
+  display: none;
+}
+.header-menu {
+  height: 80%;
+
+  display: flex;
+  flex-direction: row;
+  .searchicon {
+    flex-direction: row;
+    padding: 5%;
+    margin: 0 4%;
+    height: 80%;
+  }
+  .searchmenu {
+    height: 80%;
+    padding: 5%;
+  }
+  .searchmenu:active {
+    border: 1px solid black;
+    @include border_radius;
+  }
+}
+.maincontainer {
+  height: 1080px;
+  position: relative;
+}
+.flex-container1 {
+  position: relative;
+  .backgroundpic {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+  }
+  .bannertext {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    top: 3%;
+    padding: 4%;
+
+    h1 {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 2em;
+      color: $color10;
+    }
+    p {
+      font-family: "Montserrat";
+      color: $color10;
+      font-weight: 400;
+      padding: 20px 0;
+    }
+    .explorebtn {
+      @include orange_button;
+      @include border_radius;
+      margin: 0 4% 0 0;
+    }
+    .explorebtn:hover {
+      background-color: rgb(190, 57, 8);
+      border-color: rgb(190, 57, 8);
+    }
+    .watchbtn {
+      @include border_radius;
+      padding: 15px;
+      width: 45%;
+      background-color: transparent;
+      border: 2px solid $color10;
+      color: $color10;
+      margin: 0 0 0 4%;
+    }
+    .watchbtn:hover {
+      background: $color10;
+      color: $color1;
+    }
+    .topcomment {
+      display: flex;
+      flex-direction: column;
+      font-family: "Montserrat";
+      text-align: right;
+      padding: 20px 0;
+
+      h4,
+      p {
+        color: $color7;
+      }
+      p {
+        font-size: 0.7em;
+      }
+    }
+    .avatarinfo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+
+      .avatarimg {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-left: 3%;
+      }
+    }
+  }
+}
+.flex-container2 {
+  position: relative;
+  text-align: center;
+  font-family: "Montserrat";
+
+  h1 {
+    font-weight: bold;
+    position: relative;
+    margin: 5% 0;
+    z-index: 1;
+    font-size: 4em;
+    color: rgba(105, 162, 209, 0.12);
+  }
+  .populardestination {
+    position: absolute;
+    top: 36%;
+    padding: 0 3%;
+    margin: 0 auto;
+
+    h3 {
+      font-weight: bold;
+      color: $color4;
+      font-size: 1.3em;
+    }
+    .bestplaces {
+      @include orange_button;
+      @include border_radius;
+      margin: 10px 0;
+    }
+    .bestplaces:hover {
+      background-color: rgb(190, 57, 8);
+      border-color: rgb(190, 57, 8);
+    }
+  }
+  // SLIDER
+  .slideshow-container {
+    max-width: 100%;
+    position: absolute;
+    z-index: 3;
+    margin-top: 5%;
+    top: 185%;
+  }
+  .mySlides {
+    display: none;
+    img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.flex-container3 {
+  background-color: $color3;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  text-align: center;
+  margin-top: 5%;
+}
+.flex-container3 {
+  h3 {
+    color: $color10;
+  }
+  .card {
+    background-color: $color10;
+    margin: 2.5% 5% 2.5% 5%;
+    padding: 5%;
+    @include border_radius;
+    hr {
+      border-top: 1px dashed $color6;
+    }
+    h6 {
+      font-weight: bold;
+      color: $color2;
+      margin: 5% 0;
+      font-size: 1.4em;
+    }
+    .bookbtn {
+      @include book_button;
+      @include border_radius;
+    }
+    .bookbtn:hover {
+      background-color: rgb(77, 99, 199);
+      border-color: rgb(77, 99, 199);
+    }
+  }
+}
+.flex-container4 {
+  display: flex;
+  flex-direction: column;
+  color: $color10;
+  text-align: center;
+  font-family: "Montserrat";
+  h3 {
+    @include hedline;
+    margin: 10px 0;
+  }
+  .orangecard {
+    background-color: $color2;
+    padding: 5%;
+    button {
+      @include orange_button;
+    }
+    button:hover {
+      background-color: rgb(190, 57, 8);
+      border-color: rgb(190, 57, 8);
+    }
+  }
+}
+.flex-container5 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  padding: 2% 5%;
+  background-color: rgb(248, 242, 242);
+  h3 {
+    @include hedline;
+    margin: 10px 0;
+  }
+  .picturecard {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 50px;
+      object-fit: cover;
+      position: relative;
+      @include border_radius;
+      transition: height 2s;
+    }
+    
+    h5 {
+      position: absolute;
+      z-index: 2;
+      color: $color10;
+      top: 0px;
+      right: 20px;
+      margin: 17px 10px;
+      padding-right: 20px;
+    }
+    .downarrow {
+      display: table;
+      position: absolute;
+      z-index: 2;
+      top: 2px;
+      right: 0px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+      transform: rotate(45deg);
+    }
+    img:hover {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+.flex-container6 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  padding: 5% 5%;
+  ul {
+    padding-left: 20px;
+  }
+  a {
+    color: $color1;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+.flex-container7 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  padding: 5% 5%;
+  background-color: rgb(255, 253, 253);
+
+  h3 {
+    @include hedline;
+  }
+  form {
+    label {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    input,
+    textarea {
+      position: relative;
+      width: 100%;
+      font-style: medium;
+      border: 1px solid $color3;
+      margin: 10px 0;
+      padding: 10px 0;
+      @include border_radius;
+      background-color: transparent;
+    }
+    button {
+      @include orange_button;
+      margin: 15px 0;
+    }
+
+    input:hover {
+      cursor: text;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $color1;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .checkbox {
+    width: 20px;
+    color: $color1;
+  }
+  .checkbox:hover {
+    cursor: alias;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  text-align: center;
+  background-color: $color6;
+  div {
+    margin: 15px 0;
+  }
+  img {
+    margin: 0 10px;
+  }
+  p {
+    font-weight: 600;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    box-sizing: border-box;
+  }
+  .maincontainer {
+    height: 860px;
+  }
+  .flex-container1 {
+    .bannertext {
+      padding: 3%;
+      width: 94%;
+      p {
+        width: 60%;
+      }
+      .watchbtn {
+        width: 20%;
+      }
+      .explorebtn {
+        width: 20%;
+      }
+
+      .topcomment {
+        position: absolute;
+        left: 56%;
+        top: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-end;
+        p {
+          width: 86%;
+        }
+      }
+      .avatarinfo {
+        display: flex;
+        flex-direction: column-reverse;
+        #roationtext {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  .flex-container2 {
+    display: flex;
+    flex-direction: wrap;
+    flex-basis: 50%;
+    h1{
+      top:16%;
+    }
+    .textpopular {
+      width: 50%;
+    }
+
+    .populardestination {
+      width: 44%;
+      padding: 0;
+      margin: 0 3%;
+    text-align: center;
+      p{
+      padding: 10px 0;
+      }
+    }
+    .slideshow-container {
+      width: 50%;
+      position: relative;
+    }
+  }
+  .flex-container3 {
+    .card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 90px;
+      width: 66%;
+      padding: 10px;
+      text-align: left;
+      transition: width 2s;
+
+      hr {
+        margin: 0 10px;
+        border-right: 6px dashed $color6;
+        border-left: none;
+      }
+      .bookbtn {
+        visibility: hidden;
+      }
+    }
+    .card:hover {
+      width: 81%;
+      .bookbtn {
+        visibility: visible;
+      }
+    }
+  }
+
+  .flex-container7 {
+    padding: 3% 20%;
+  }
+  .footer {
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-content: space-between;
+    padding: 2%;
+    div{
+      height: 20px;
+    }
+    p{
+      height: 20px;
+      margin: 20px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flex-container-header {
+    position: absolute;
+    z-index: 3;
+    width: 70%;
+    background-color: $color10;
+    margin: 0 15%;
+    .navigation {
+      display: flex;
+      flex-direction: row;
+      font-family: "Montserrat";
+      justify-content: flex-start;
+      justify-content: baseline;
+      align-items: center;
+      text-align: left;
+      li {
+        width: 100%;
+        list-style-type: none;
+      }
+      a {
+        font-weight: 800;
+        padding: 19px 20px;
+        
+        text-decoration: none;
+        color: $color9;
+      }
+      a:hover {
+        border-bottom: 2px solid $color1;
+      }
+      a:active {
+        background: rgb(211, 206, 206);
+        border-bottom: 2px solid $color1;
+      }
+    }
+    .header-menu {
+    .searchmenu {
+      display: none;    }
+   }
+  }
+  .flex-container1 {
+    .bannertext {
+      margin-top: 7%;
+      padding: 0 15%;
+      width: 100%;
+
+      .topcomment {
+        left: 45%;
+        #footerfirst{
+
+          width: 47%;
+          p{
+            width: 44%;
+            margin-right: 10px;
+          }
+        }
+
+      }
+    }
+  }
+  .flex-container3{
+    padding:5% 10%;
+    h3{
+      font-size: 1.7em;
+    }
+    .card{
+      width: 60%;
+    }
+    .card:hover{
+      width: 81%;
+      .bookbtn {
+        visibility: visible;
+      }
+    }
+
+    
+  }
+  .flex-container4{
+    width: 45%;
+    display: inline-flex;
+    margin-bottom: 5%;
+    h3{
+      margin: 25px 0;
+    }
+    
+  }
+  .flex-container5{
+    position: absolute;
+    left: 45%;
+    width: 50%;
+    padding:3% 2.5%;
+    margin: 0;
+    display: inline-flex;
+  
+  }
+  .flex-container7{
+    padding:3% 10%;
+   
+  }
+}
